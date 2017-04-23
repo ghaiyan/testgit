@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/search/" style="font-weight:bold;font-size:14px;" >note search</a></li>
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+</table>
+</h>
+<div>
+ <table align="center" cellspacing="0" cellpadding="0" border="1">
+
+
+     <tr>
+
+    <td colspan="18" align="center">Measure:conductivity(W/cm/K)</td>
+     </tr>
+     <tr>
+         <td >MeasureTemperature(K)</td>
+    <td>Nd</td>
+     <td>Sm</td>
+     <td>Gd</td>
+     <td>Tb</td>
+     <td>Dy</td>
+     <td>Er</td>
+     <td>Tm</td>
+     <td>Ho</td>
+     <td>Sc</td>
+     <td>Y</td>
+     <td>Yb</td>
+     <td>La</td>
+     <td> Ce</td>
+     <td>Pr</td>
+     <td>Pm</td>
+     <td> Eu</td>
+     <td>Lu</td>
+ </tr>
+    </tr>
+
+{% for conductivityinfo in info_conductivity %}
+    <tr>
+    <td>{{conductivityinfo.MeasureTemperature}}</td>
+    <td>{{conductivityinfo.Nd}}</td>
+    <td>{{conductivityinfo.Sm}}</td>
+    <td>{{conductivityinfo.Gd}}</td>
+    <td>{{conductivityinfo.Tb}}</td>
+         <td>{{conductivityinfo.Dy}}</td>
+         <td>{{conductivityinfo.Er}}</td>
+        <td>{{conductivityinfo.Tm}}</td>
+    <td>{{conductivityinfo.Ho}}</td>
+ <td>{{conductivityinfo.Sc}}</td>
+ <td>{{conductivityinfo.Y}}</td>
+  <td>{{conductivityinfo.Yb}}</td>
+ <td>{{conductivityinfo.La}}</td>
+          <td>{{conductivityinfo.Ce}}</td>
+            <td>{{conductivityinfo.Pr}}</td>
+         <td>{{conductivityinfo.Pm}}</td>
+         <td>{{conductivityinfo.Eu}}</td>
+     <td>{{conductivityinfo.Lu}}</td>
+
+
+
+
+
+
+
+
+    </tr>
+{% endfor %}
+</table>
+</div>
+
+
+
+</body>
+</html>

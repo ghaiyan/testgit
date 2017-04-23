@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+<style>
+body{ margin:0;
+     padding:0;
+    width:1000px;
+	margin:0 auto;
+}
+div {
+      margin-top:22%;
+      margin-left:320px;
+      width:600px;
+}
+</style>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java">
+$(document).ready(function() {
+	$("#con").click(function() {
+		window.location="/redatabase/con";
+	});
+	$("#nan").click(function() {
+		window.location="/redatabase/nan/search";
+	})
+})
+</script>
+</head>
+
+<body style="background:#1D4DA2">
+<h1>welcome {{username}} !</h1>
+<br>
+<a href="http://127.0.0.1:8000/redatabase/logout/">退出</a>
+<div>
+<input type="image" style="margin-bottom:20px" src="{% static '/images/left.jpg' %}" id="con" value="Conventional polycrystalline System"/>
+
+<input type="image" id="nan" value="Nanocrystalline System" src="{% static '/images/right.jpg' %}"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/search/" style="font-weight:bold;font-size:14px;" >note search</a></li>
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+</table>
+        <div>
+{% for smoinfo in smcoinformation %}
+<table  align="center" cellspacing="0" cellpadding="0" border="1">
+    <tr>
+        <td><font size="5">Formula</font></td>
+        <td></td>
+        <td><font size="5">{{ smoinfo.Formula }}</font></td>
+    </tr>
+
+      <tr>
+        <td>Grainsize</td>
+        <td>(nm)</td>
+        <td>{{smoinfo.Grainsize }}</td>
+    </tr>
+      <tr>
+        <td>Latticeparameters</td>
+        <td></td>
+        <td>{{smoinfo.Latticeparameters }}</td>
+    </tr>
+      <tr>
+        <td>Crystalstructure</td>
+        <td></td>
+        <td>{{ smoinfo.Crystalstructure}}</td>
+    </tr>
+      <tr>
+        <td>Phasetransformationtemperature</td>
+        <td>(K)</td>
+        <td>{{ smoinfo.Phasetransformationtemperature }}</td>
+    </tr>
+      <tr>
+        <td>Debyetemperature</td>
+        <td>(K)</td>
+        <td>{{ smoinfo.Debyetemperature }}</td>
+    </tr>
+      <tr>
+        <td>Curietemperature</td>
+        <td>(K)</td>
+        <td>{{ smoinfo.Curietemperature }}</td>
+    </tr>
+      <tr>
+        <td>Heatcapacity</td>
+        <td>(J/mol/K)</td>
+        <td>{{ smoinfo.Heatcapacity }}</td>
+    </tr>
+     <tr>
+        <td>Thermalexpansioncoefficient</td>
+        <td>(10E-4/K)</td>
+        <td>{{ smoinfo.Thermalexpansioncoefficient }}</td>
+    </tr>
+     <tr>
+        <td>Elasticmodulus</td>
+        <td>(GPa)</td>
+        <td>{{ smoinfo.Elasticmodulus }}</td>
+    </tr>
+     <tr>
+        <td>Saturationmagnetization</td>
+        <td></td>
+        <td>{{ smoinfo.Saturationmagnetization }}</td>
+    </tr>
+     <tr>
+        <td>Remanence</td>
+        <td></td>
+        <td>{{ smoinfo.Remanence }}</td>
+    </tr>
+     <tr>
+        <td>Coercivity</td>
+        <td></td>
+        <td>{{ smoinfo.Coercivity }}</td>
+    </tr>
+     <tr>
+        <td>max</td>
+        <td></td>
+        <td>{{ smoinfo.max }}</td>
+    </tr>
+</table>
+
+    <form  method="get" action="http://127.0.0.1:8000/redatabase/nan/deleteFormulaData/">
+        <input type="hidden" name="id" value="{{smcoinfo.id}}" align="center">
+        <input type="submit" value="delete"  align="center">
+      </form>
+
+{% endfor %}
+</div>
+
+        <font size="4" color="black">
+<div class="main-content-pagitor" align="center">
+            {% if smcoinformation.has_previous %}
+                <a href="?page={{ smcoinformation.previous_page_number }}"><font size="4" color="black"> last</font></a>
+            {% endif %}
+            <span>{{ smcoinformation.number }} of {{ smcoinformation.paginator.num_pages }}</span>
+            {% if smcoinformation.has_next %}
+                <a href="?page={{ smcoinformation.next_page_number }}"><font size="4" color="black">next</font></a>
+            {% endif %}
+</div>
+
+        </font>
+
+</body>
+</html>

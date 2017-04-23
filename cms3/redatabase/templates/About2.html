@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data-Formula</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+    .main-content-pagitor  {
+    width: 50%;
+    padding: 10px 20px 5px 20px;
+    overflow: auto;
+    margin: auto;
+    /*position: relative;*/
+    text-align: center;
+}
+.main-content-pagitor a {
+    color: #cccccc;
+    padding: 0 5px 0 5px;
+}
+.main-content-pagitor span {
+    color: #585858;
+
+    /*padding: 20px 20px 20px 20px;*/
+
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;					<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/Formula/" style="font-weight:bold;font-size:14px;">View Formula Data</a>
+&nbsp;&nbsp;&nbsp;                <a href="http://127.0.0.1:8000/redatabase/nan/ViewData/materialsData/" style="font-weight:bold;font-size:14px;">View materials Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+</table>
+
+<div style="margin-top: 40px" align="center"></div>
+<table style="margin-top:30px" width="800" border="0" align="center" style="margin-bottom:4px;margin-top:5px;">
+  <tr>
+    <td><span class="STYLE16"> &gt;&gt; About this database </span></td>
+  </tr>
+ </table>
+
+   <table width="800" height="600" border="1" align="center" bgcolor="#E1FFE1" bordercolor="#CCCCCC">
+	<tr>
+	<td bgcolor="#B6FB93"><span class="STYLE4" > <font face="Verdana"> A brief introduction:</font></span>
+     </td>
+	 </tr>
+	<tr>
+	<td><span> The REs and RE/TM Compounds Database (the rare-earth metals and rare-earth/transition-metal compounds database) was created and constructed by Prof. Xiaoyan Song's research group of Metallic Nanomaterials and Computational Material Science at Beijing University of Technology, P. R. China (URL: <a href="http://www.bjut.edu.cn/college/clxy/cms/Mycms/cms.htm">http://cms.bjut.edu.cn</a>).<p>
+The REs and RE/TM Compounds Database consists of four gradual menus, i.e. the ‘Log-in’ interface, the ‘Main Menu’ interface, the ‘Data’ interface, and the ‘Source of Data’ interface. </span>
+     </td>
+     </tr>
+     <tr>
+	<td><li><span class="STYLE4"> The 'Log in' interface </span></li>is used to verify the users ID.
+     </td>
+	 </tr>
+	 <tr>
+	<td><li><span class="STYLE4">  The 'Main Menu' interface </span></li>is used to choose the material for viewing the data of structure and properties.
+     </td>
+	 </tr>
+     <tr>
+	<td><li><span class="STYLE4"> The 'Data' interface </span></li>is used to view the data of structure and properties at the room temperature and at high temperatures.
+     </td>
+	 </tr>
+
+	 <tr>
+	<td><li><span class="STYLE4"> The 'Source of Data' interface</span></li>
+	 is used to view the detailed information of data.
+	 There is a button 'Detailed information of data'
+	  at the right lower corner of each main 'Data' interface.
+	   Click this button to view the source of the data,
+	   the detailed information of preparation of the samples
+	    (nanocrystalline rare-earth metals and rare-earth/ transition-metal compounds),
+	    and the measuring methods of the properties.
+	     </td>
+	 </tr>
+     <tr>
+    <tr>
+	<td><span class="STYLE4"> The link to this database is via "Metals and Alloys" Database through
+      NIMS (National Institute for Material Science, Japan) Materials Database.
+     </span>
+     </td>
+     </tr>
+
+      <tr>
+	<td bgcolor="#B6FB93"><span class="STYLE4"> <font face="Verdana">Service information:</font></span>
+     </td>
+	 </tr>
+      <tr>
+      <td><span class="STYLE4">Scientific questions:&nbsp; </span>Prof. Xiaoyan Song, &nbsp;xysong@bjut.edu.cn
+
+     </td>
+     </tr>
+     <tr>
+      <td><span class="STYLE4"> Technical support: &nbsp;</span>CMS Group, &nbsp;bjut-cms@163.com
+
+     </tr>
+    <tr>
+      <td><span class="STYLE23"> Beijing,&nbsp; March &nbsp;15, &nbsp;2011
+     </span>
+     </tr>
+     </table>
+     <table width="800" border="0" align="center">
+<tr>
+
+<td>
+&nbsp;&nbsp;
+</td>
+</tr>
+</table>

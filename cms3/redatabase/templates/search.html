@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/search.js' %}"></script>
+<script>
+    function queryajx() {
+
+    }
+</script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+.hilite{
+    background: red;color: white;
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/search/" style="font-weight:bold;font-size:14px;" >note search</a></li>
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+<label> Query mode</label>
+    <select class="option" name="match_flag" size="1" style="height:25px;width:90px;">
+				<option value="forward">forward</option>
+                <option value="full">perfect match</option>
+				<option value="any">any</option>
+    </select></p>
+ <div id="Single" style="width:96%;height:95%;padding-top:10px;">
+		<div style="float:left;padding-top:8px;padding-bottom:5px;">Single search</div>
+		<div><form id="searchform">
+			<input id="query" value="Hexagonal" type="text" name="query" style="height:20px;width:50%"  />
+			<input id="go_query" type="submit" value="Search" size="1" onclick="queryajx()" style="height:25px;width:78px;"/>
+        </form>
+        </div>
+<span id="show1"></span>
+ <div id="info" class="info">
+ now, you can enter some words to search in the textarea, otherwise, you can search the local words.
+ information you want to search:
+<ol >
+ {% for materialsinfo in materialsinformation  %}
+     <li type="1" >MaterName:{{ materialsinfo.MaterName}},MaterNumbers:{{ materialsinfo.MaterNumbers}}
+     Structure:{{ materialsinfo.Structure}},
+     Size:{{ materialsinfo.Size}}(nm),
+     MeasureTemperature:{{ materialsinfo.MeasureTemperature}}(K),
+     Resistivity:{{ materialsinfo.Resistivity}}10E-6 Ωm,
+     Conductivity :{{ materialsinfo.Conductivity }}W/cm/K,
+     Heat capacity:{{ materialsinfo.Cp}}(J/mol/K),
+     Thermal expansion coefficient:{{ materialsinfo.TEC}}(10E-4/K),
+     YModulus:{{materialsinfo.YModulus }}(GPa),
+     Microhardness:{{ materialsinfo.Microhardness}}(GPa),
+     Remark:{{ materialsinfo.Remark }}<p/>
+     </li><p/>
+
+ {% endfor %} </ol>
+ </div>
+ <span id="show"></span>
+ </div>
+
+</body>
+</html>

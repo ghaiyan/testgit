@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/search/" style="font-weight:bold;font-size:14px;" >note search</a></li>
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+<style type="text/css">
+
+<!--
+body {
+	background-color:#D1E9F3;
+}
+.STYLE1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.STYLE4 {font-size: 18px; font-family: Arial, Helvetica, sans-serif; }
+-->
+</style>
+	<input type="hidden" id="admin" value="'hilardeng'"/>
+	<table width="450" height="204" border="0" align="center" style="background:url({% static "/images/login_bg.gif" %}) repeat-x;">
+	  <tr>
+	    <td height="51" colspan="2" bgcolor="#C1F1E8"><div align="center" class="STYLE1" >Change Password </div></td>
+	  </tr>
+	  <tr>
+	    <td height="123" colspan="2" bgcolor="#BFEAEA">
+	      <table width="344" height="111" border="0">
+	        <tr>
+	          <td width="155" bgcolor="#73F582"><span class="STYLE4">Old password: </span></td>
+	          <td colspan="3"><label>
+	          <input name="opwd" type="password" id="opwd" maxlength="20" />
+	          </label></td>
+	        </tr>
+	        <tr>
+	          <td bgcolor="#73F582"><span class="STYLE4" >New password: </span></td>
+	          <td colspan="3"><label>
+	            <input name="pwd" type="password" id="pwd" maxlength="20" />
+	          </label></td>
+	        </tr>
+	        <tr>
+	          <td bgcolor="#73F582"><span class="STYLE4" >Re-type password: </span></td>
+	          <td colspan="3"><label>
+	            <input name="pwd2" type="password" id="pwd2" maxlength="20" />
+	          </label></td>
+
+	        </tr>
+	        <tr>
+	          <td height="23">&nbsp;</td>
+	          <td width="82">&nbsp;</td>
+	          <td width="82">
+
+	            <div align="left">
+	              <input id="change" type="submit" name="Submit" value="Submit" style="background-color:#BFEAEA" />
+	              </div></td><td width="9">&nbsp;</td>
+
+	          </tr>
+	         <tr>
+		         <td height="23">&nbsp;</td>
+		          <td width="82"><span id="change_info" style="font-size:14px;"></span></td>
+		          <td width="82"> </td>
+
+	         </tr>
+	      </table>
+
+	    </td>
+	  </tr>
+
+	  <tr>
+
+	  </tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,62 @@
+body {
+	background-color: #CDE7F3;
+}
+
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.STYLE4 {
+	font-size: 16px;
+	font-weight: bold;
+	color:black;
+	
+}
+
+.STYLE6 {
+	font-size: 24px;
+	color: #0000FF;
+}
+
+.STYLE9 {
+	font-size: 14px;
+	font-weight: bold;
+	width:auto;
+}
+
+.STYLE10 {
+	color: #FFFFFF
+}
+
+.STYLE14 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #0000FF;
+}
+
+.STYLE15 {
+	color: #FFCCFF
+
+}
+
+.STYLE16 {
+	font-size: 16px;
+	margin-left:50%;
+	margin-top:10px;
+}
+
+.STYLE17 {
+	font-size: 14px;
+	width:auto;
+}
+
+.STYLE18 {
+
+	font-size: 12px;
+	width:auto;
+}
+
+.STYLE19 {
+	font-size: 14px;
+	font-weight: bold;
+	color:blue;}

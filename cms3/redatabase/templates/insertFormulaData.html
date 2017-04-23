@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insert Formula Data</title>
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/insert.js' %}"></script>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color:#1F4995;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.STYLE1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.STYLE4 {
+	font-size: 16px;
+	font-weight: bold;
+}
+-->
+</style>
+<form action="http://127.0.0.1:8000/redatabase/nan/insertFormulaData/" method="POST" id="insertform">
+    {% csrf_token %}
+<table width="480" border="0" align="center" style="background:url({%static '/images/login_bg.gif' %}) repeat-x;">
+	<tr>
+		<td bgcolor="#D1E9F3" width="500">
+			<div align="center">
+				<span class="STYLE1">insert Formula data</span><p></p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td height="166" bgcolor="#D1E9F3">
+				<table width="auto" height="159" border="0" align="center">
+					<p/>
+
+
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4" id="Formula">Formula:</span>
+						</td>
+						<td>
+							<input name="Formula" type="text" id="Formula" maxlength="50"  value="{{ smoinfo.Formula }}" required/>
+						</td>
+					</tr>
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Grainsize:</span>
+						</td>
+						<td>
+							<input name="Grainsize" type="text" id="Grainsize" maxlength="10"  value="{{ smoinfo.Grainsize }}" />
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Latticeparameters:</span>
+						</td>
+						<td>
+							<input name="Latticeparameters" type="text" id="Latticeparameters" maxlength="10" value="{{smoinfo.Latticeparameters }}"/>
+						</td>
+						<td>
+						     <span><font color="black"></font></span>
+					    </td>
+					</tr>
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Crystalstructure:</span>
+						</td>
+						<td>
+							<input name="Crystalstructure" type="text" id="Crystalstructure" maxlength="10" value="{{ smoinfo.Crystalstructure }}"/>
+						</td>
+
+					</tr>
+					<tr>
+						<td bgcolor="#73F582" width="40">
+							<span class="STYLE4">
+								Phasetransformationtemperature:
+							</span>
+						</td>
+						<td width="30">
+							<label></label>
+							<span>
+								<input name="Phasetransformationtemperature" type="text" id="Phasetransformationtemperature" maxlength="50"  value="{{ smoinfo.Phasetransformationtemperature }}"/>
+							</span>
+						</td>
+
+					</tr>
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Debyetemperature:</span>
+						</td>
+						<td>
+							<input name="Debyetemperature" type="text" id="Debyetemperature" maxlength="10" value="{{ smoinfo.Debyetemperature }}"/>
+						</td>
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Curietemperature:</span>
+						</td>
+						<td>
+							<input name="Curietemperature" type="text" id="Curietemperature" maxlength="10" value="{{smoinfo.Curietemperature }}"/>
+						</td>
+
+					</tr>
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Heatcapacity:</span>
+						</td>
+						<td>
+							<input name="Heatcapacity" type="text" id="Heatcapacity" maxlength="10" value="{{ smoinfo.Heatcapacity }}"/>
+						</td>
+
+					</tr>
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Thermalexpansioncoefficient:</span>
+						</td>
+						<td>
+							<input name="Thermalexpansioncoefficient" type="text" id="Thermalexpansioncoefficient" maxlength="10" value="{{smoinfo.Thermalexpansioncoefficient }}"/>
+						</td>
+						</tr>
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span  class="STYLE4">Elasticmodulus:</span>
+						</td>
+						<td>
+							<input name="Elasticmodulus" type="text" id="Elasticmodulus" maxlength="15" value="{{smoinfo.Elasticmodulus }}"/>
+
+						</td>
+
+
+				    </tr>
+
+					<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Saturationmagnetization:</span>
+						</td>
+						<td>
+							<input name="Saturationmagnetization" type="text" id="Saturationmagnetization" maxlength="15" value="{{ smoinfo.Saturationmagnetization }}"/>
+						</td>
+
+					</tr>
+					<tr>
+						<td bgcolor="#73F582"  style="width:155px">
+							<span class="STYLE4">Remanence:</span>
+						</td>
+						<td>
+							<input name="Remanence" type="text" id="Remanence" maxlength="15" value="{{ smoinfo.Remanence}}"/>
+						</td>
+						<td>
+						     <span><font color="red" size="5">
+					</tr>
+<tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">Coercivity:</span>
+						</td>
+						<td>
+							<input name="Coercivity" type="text" id="Coercivity" maxlength="15" value="{{ smoinfo.Coercivity}}"/>
+						</td>
+
+					</tr>
+                    <tr>
+						<td bgcolor="#73F582">
+							<span class="STYLE4">max:</span>
+						</td>
+						<td>
+							<input name="max" type="text" id="max" maxlength="15" value="{{ smoinfo.max}}"/>
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div align="center">
+								<label>
+									<input type="submit" id="insert" value="insert" style="background-color:D8D8D8"  />
+								</label>
+							</div>
+						</td>
+<td colspan="2">
+							<div align="center">
+								<label>
+									<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" >back</a>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<span id="insert" ></span>
+						</td>
+					</tr>
+				</table>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

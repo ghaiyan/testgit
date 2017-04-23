@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆界面</title>
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/login.css' %}" type="text/css" rel="stylesheet" />
+
+<body background="{% static '/images/proloadbanner.JPG' %}">
+
+<div id="one">
+</div>
+
+<div align="center" id="div_logo" class="grid_24 alignCenter">
+     <div style="background:url({% static "images/login_dingbu.GIF.jpg" %}) no-repeat;" id="flashBanner">
+             <object align="middle" width="950" height="162" id="FlashBanner" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+				<param value="{% static "/flash/xitu.swf"%}" name="movie">
+				<param value="high" name="quality">
+				<param value="#ffffff" name="bgcolor">
+				<param value="true" name="play">
+				<param value="true" name="loop">
+				<param value="window" name="wmode">
+				<param value="showall" name="scale">
+				<param value="false" name="menu">
+				<param value="false" name="devicefont">
+				<param value="" name="salign">
+				<param value="sameDomain" name="allowScriptAccess">
+			<!--[if !IE]>-->
+			<object width="950" height="162" data="{% static "/flash/xitu.swf"%}" type="application/x-shockwave-flash">
+				<param value="{% static "/flash/xitu.swf"%}" name="movie">
+				<param value="high" name="quality">
+				<param value="#ffffff" name="bgcolor">
+				<param value="true" name="play">
+				<param value="true" name="loop">
+				<param value="window" name="wmode">
+				<param value="showall" name="scale">
+				<param value="false" name="menu">
+				<param value="false" name="devicefont">
+				<param value="" name="salign">
+				<param value="sameDomain" name="allowScriptAccess">
+			<!--<![endif]-->
+			<a href="http://www.adobe.com/go/getflash">
+			<img alt="获得 Adobe Flash Player" src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif">
+			</a>
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+			</object>
+		</div>
+
+    </div>
+
+</div>
+
+<div id="login_format" align="center" style="margin-top:60px">
+
+
+<form method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{uf.as_p}}
+    <input type="submit" value = "login" />
+</form>
+<br>
+<a href="http://127.0.0.1:8000/admin/">admin login</a>
+<a href="http://127.0.0.1:8000/redatabase/regist/">registry</a>
+
+	<hr style="color:#265CBC;width:40%;"  style="margin-top:10px;"/><br/>
+	<p style="text-align:center;margin-top:-26px;"><font color="#56BCEB">REs and RE/TM Compounds Database</font></p>
+
+	<p id="about_p" style="cursor:pointer;margin-top:-18px" align="center"><font color="#56BCEB">About the database</font></p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://matsec.ustb.edu.cn"><span style="font-family:华文中宋; color:yellow; ">国家材料科学数据共享网</span></a>
+
+</div>
+
+<center>
+<div style="margin-top:80px" >
+	<table width="950" >
+	<tr>
+
+    <td  ><font face="黑体" size=3 color="orange">友情<br>链接</font></td>
+    <td>
+    <a href="http://www.most.gov.cn/" title="中国科技部"  target="_blank"><img  src="{% static 'images/link_kjb.gif'%}"  width="120px" height="45px"  /></a>
+    </td>
+    <td><a href="http://www.sciencedata.cn/index.php" title="科学数据共享工程" target="_blank"><img  src="{% static 'images/link_kxsj.gif'%}"  width="120px" height="45px"  /></a>
+    </td>
+    <td><a href="http://www.codata.cn/" title="国际科技数据委员会" target="_blank"><img  src="{% static 'images/link_codata.png'%}" width="120px" height="45px"  /></a>
+    </td><td><a href="http://www.escience.gov.cn/" title="中国科技资源共享网" target="_blank"><img  src="{% static 'images/link_kjzy.png'%}" width="120px" height="45px"  /></a>
+    </td><td><a href="http://www.chts.org.cn/" title="热处理学会" target="_blank"><img  src="{% static 'images/link_rcl.png'%}" width="120px" height="45px"  /></a>
+    </td><td><a href="http://www.csta.org.cn/" title="国家科技成果信息服务平台" target="_blank"><img  src="{% static 'images/link_kjcg.png'%}" width="120px" height="45px"  /></a>
+    </td><td><a href="http://www.amadata.net.cn/" title="先进制造与自动化科学数据共享网" target="_blank"><img  src="{% static 'images/link_xjzz.png'%}" width="120px" height="45px"  /></a>
+    </td>
+
+    </tr></table>
+
+    <table width="950" >
+
+<tr align="center"><td colspan="8">
+<div style="background: url({%static "images/footBack.png" %}) repeat scroll 0 0 transparent;color: #CCCCCC;height: 55px;padding-top: 5px;padding-left: 10px">
+    <font size=2>
+    <div></div>
+    <div>国家材料科学数据共享网</div>
+    <div>稀土金属及合金基础数据共享资源节点</div>
+    <div>版权所有©北京工业大学</div>
+
+    </font>
+  </td></tr>
+  </table>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>View data</title>
+
+</head>
+<script type="text/javascript" language="java" src="{% static '/js/jquery.js' %}"></script>
+<script type="text/javascript" language="java" src="{% static '/js/admin.js' %}"></script>
+<link href="{% static '/style/index.css' %}" type="text/css" rel="stylesheet" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+</style>
+<body background="{% static '/images/bg.PNG' %}">
+		<table width="1300" height="50" border="0" >
+  <tr align="center">
+   <td>
+		<div id="index_top">
+			<div>
+				<span id="index_top_title"><img src="{% static 'images/nanobanner.jpg' %}" border="0" align="center"/></span>
+
+				<!--<span id="welcome_info" style="text-align:center;margin-left:-40px">Welcome:&nbsp;<font color="blue"><b><i>'hilardeng'</i></b></font></span>
+				<span style="margin-left:30px">Today is </span>
+				<span>04/03/2017</span>-->
+</p>
+						<a href="http://127.0.0.1:8000/redatabase/changePW/" style="font-weight:bold;font-size:14px;">Change Password</a>
+&nbsp;&nbsp;&nbsp;
+						<a href="/redatabase/" style="font-weight:bold;font-size:14px;">Log out</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/index/" style="font-weight:bold;font-size:14px;">Go Back</a>
+&nbsp;&nbsp;&nbsp;
+					<a href="http://127.0.0.1:8000/redatabase/About2/" style="font-weight:bold;font-size:14px;">Instructions &nbsp; Service</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						<a href="http://127.0.0.1:8000/redatabase/nan/ViewData/" style="font-weight:bold;font-size:14px;">View Data</a>
+&nbsp;&nbsp;&nbsp;
+
+                   <a href="http://127.0.0.1:8000/redatabase/nan/search" style="font-weight:bold;font-size:14px;" >Single search</a></li>
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/redatabase/nan/CompSearch" style="font-weight:bold;font-size:14px;" >Combinatorial search</a></li>
+&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;	<a href="http://127.0.0.1:8000/search/" style="font-weight:bold;font-size:14px;" >note search</a></li>
+
+		</div>
+  </td>
+</tr>
+</table>
+</p>
+<label> Query mode</label>
+    <select class="option" name="match_flag" size="1" style="height:25px;width:90px;">
+				<option value="forward">forward</option>
+                <option value="full">perfect match</option>
+				<option value="any">any</option>
+    </select></p>
+
+<div id="Combinatorial" style="width:96%;height:95%;padding-top:30px;">
+        <p class="field-group">
+						<span class="field">
+							<label for="searchterm_1" class="superfluous">Search Term</label>
+<input type="text" value="sm2co7r" maxlength="40" id="query1" size="50">
+</input>
+                            </span>
+						<span class="field">
+							<label for="searchin_1">in</label>
+<select name="searchin_1" id="searchin_1">
+    <option value="element">element</option>
+    <option value="material">material</option>
+    <option value=" chemical formula"> chemical formula</option>
+    <option value="temperature">temperature</option>
+    <option value="Nanoscale">Nanoscale</option>
+    <option value="enthalpy">enthalpy</option>
+    <option value="gibbs_free_energy">gibbs_free_energy</option>
+     <option value="grainsize">grainsize</option>
+     <option value="conductity">conductity</option>
+     <option value="resistivity">resistivity</option>
+    <option value="cp">cp</option>
+    <option value="tec">tec</option>
+    <option value="others">others</option>
+    </select>
+                            </span>
+						<img src="http://staticieeexplore.ieee.org/assets/img/icon.remove.gif" width="24" height="24" alt="Remove" title="Remove" class="button" />
+					</p>
+<p class="field-group">
+						<span class="field">
+							<label for="searchconditional_2" class="superfluous">Conditional (and/or/not)</label>
+							<select name="searchconditional_2" id="searchconditional_2">
+								<option value="AND">AND</option>
+								<option value="OR">OR</option>
+								<option value="NOT">NOT</option>
+							</select>
+						</span>
+						<span class="field">
+							<label for="searchterm_2" class="superfluous">Search Term</label>
+							<input type="text" value="300K" id="query2" size="50" />
+							</span>
+						<span class="field">
+							<label for="searchin_2">in</label>
+ <select name="searchin_2" id="searchin_2">
+    <option value="element">element</option>
+    <option value="material">material</option>
+    <option value=" chemical formula"> chemical formula</option>
+    <option value="temperature">temperature</option>
+    <option value="Nanoscale">Nanoscale</option>
+    <option value="enthalpy">enthalpy</option>
+    <option value="gibbs_free_energy">gibbs_free_energy</option>
+     <option value="grainsize">grainsize</option>
+     <option value="conductity">conductity</option>
+     <option value="resistivity">resistivity</option>
+    <option value="cp">cp</option>
+    <option value="tec">tec</option>
+    <option value="others">others</option>
+ </select>
+                            </span>
+
+						<img src="http://staticieeexplore.ieee.org/assets/img/icon.remove.gif" width="24" height="24" alt="Remove" title="Remove" class="button" />
+					</p>
+<p class="field-group">
+						<span class="field">
+							<label for="searchconditional_3" class="superfluous">Conditional (and/or/not)</label>
+							<select name="searchconditional_3" id="searchconditional_3">
+								<option value="AND">AND</option>
+								<option value="OR">OR</option>
+								<option value="NOT">NOT</option>
+							</select>
+						</span>
+						<span class="field">
+							<label for="searchterm_3" class="superfluous">Search Term</label>
+							<input type="text" value="20nm" id="query3" size="50" />
+							</span>
+						<span class="field">
+							<label for="searchin_3">in</label>
+<select name="searchin_3" id="searchin_3">
+     <option value="element">element</option>
+    <option value="material">material</option>
+    <option value=" chemical formula"> chemical formula</option>
+    <option value="temperature">temperature</option>
+    <option value="Nanoscale">Nanoscale</option>
+    <option value="enthalpy">enthalpy</option>
+    <option value="gibbs_free_energy">gibbs_free_energy</option>
+     <option value="grainsize">grainsize</option>
+     <option value="conductity">conductity</option>
+     <option value="resistivity">resistivity</option>
+    <option value="cp">cp</option>
+    <option value="tec">tec</option>
+    <option value="others">others</option>
+    </select>
+                            </span>
+<img src="http://staticieeexplore.ieee.org/assets/img/icon.remove.gif" width="24" height="24" alt="Remove" title="Remove" class="button" />
+					</p>
+
+<div class="action">
+						<img src="http://staticieeexplore.ieee.org/assets/img/btn.add-new-line.gif" width="110" height="20" alt="Add New Line" class="button" id="add-new-line" />
+						<img src="http://staticieeexplore.ieee.org/assets/img/btn.reset-all.gif" width="72" height="20" alt="Reset All" class="button" id="reset-all-fields" />
+						<span id="advKeywordSrch">
+						<input type="image" src="http://staticieeexplore.ieee.org/assets/img/btn.search.2.gif" alt="Search"  id="submit-selections"/>
+						</span>
+					</div>
+</div>
+    </div>
+</body>
+</html>
